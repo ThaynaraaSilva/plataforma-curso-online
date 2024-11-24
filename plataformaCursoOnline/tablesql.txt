@@ -1,0 +1,32 @@
+USE plataformadecursosonline;
+
+CREATE TABLE `aluno` (
+  `id` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `matricula` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `email` (`email`),
+  UNIQUE KEY `matricula` (`matricula`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `curso` (
+  `id` varchar(255) NOT NULL,
+  `titulo` varchar(255) NOT NULL,
+  `descricao` text,
+  `ano_criacao` int NOT NULL,
+  `duracao_horas` int NOT NULL,
+  `preco` double NOT NULL,
+  `tipo` enum('PRESENCIAL', 'ONLINE') NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+
+CREATE TABLE `instrutor` (
+  `id` varchar(255) NOT NULL,
+  `nome` varchar(255) NOT NULL,
+  `area_de_especializacao` varchar(255) NOT NULL,
+  `anos_de_experiencia` int NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
